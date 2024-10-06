@@ -1,14 +1,15 @@
 let nome = prompt('Olá, seja bem-vindo ao jogo de adivinhar números. Para continuar, digite o seu nome!');
-let numeroSecreto = Math.floor(Math.random() * 5) + 1; // Cria um número rondômico entre 1 e 10
+let numeroMaximo = 20;
+let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1) ;// Cria um número rondômico entre 1 e 10
 console.log(numeroSecreto);
 let chute;
 let tentativas = 1;
 
 while (chute != numeroSecreto) {
-   chute = prompt (`Ok, ${nome}. Escolha um número entre 1 e 5`);
+   chute = prompt (`Ok, ${nome}. Escolha um número entre 1 e ${numeroMaximo}`);
     // Se o chute foir IGUAL ao número secreto
     if (numeroSecreto == chute){
-        alert(`| ${numeroSecreto} | Você acertou com apenas ${tentativas} tentativa(s)! Parabéns, ${nome}!`);
+        break;
     } else {
         if(chute > numeroSecreto){
             alert(`${nome}, o número secreto é menor que ${chute}`);
@@ -17,5 +18,16 @@ while (chute != numeroSecreto) {
         };
 
         tentativas++;
-}
+    }
 };
+
+    let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
+    alert (`| ${numeroSecreto} | Você acertou com apenas ${tentativas} ${palavraTentativa}. Parabéns, ${nome}!`);
+
+
+
+    /*if (tentativas > 1) {
+        alert (`| ${numeroSecreto} | Você acertou com apenas ${tentativas} tentativas! Parabéns, ${nome}!`);
+    } else {
+        alert (`| ${numeroSecreto} | Você acertou com apenas ${tentativas} tentativa! Parabéns, ${nome}!`);
+    };*/
