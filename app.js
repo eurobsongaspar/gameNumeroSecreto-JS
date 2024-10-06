@@ -23,11 +23,3 @@ while (chute != numeroSecreto) {
 
     let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
     alert (`| ${numeroSecreto} | Você acertou com apenas ${tentativas} ${palavraTentativa}. Parabéns, ${nome}!`);
-
-
-
-    /*if (tentativas > 1) {
-        alert (`| ${numeroSecreto} | Você acertou com apenas ${tentativas} tentativas! Parabéns, ${nome}!`);
-    } else {
-        alert (`| ${numeroSecreto} | Você acertou com apenas ${tentativas} tentativa! Parabéns, ${nome}!`);
-    };*/
